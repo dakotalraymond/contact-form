@@ -7,6 +7,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   </head>
   <body>
+    <% if(typeof error !== 'undefined'){ %> <script>alert("Message not sent! Error occurred!")</script><% } %>
+    <div class="center">
     <h2 class="title">Contact Form</h2>
+    <form action="/" method="post">
+      <input id="name" type="text" placeholder="Your name" name="name" required size="40" value="<% if(typeof name !== 'undefined'){ %> <%= name %> <% } %>"> <br>
+      <input id="email" type="email" placeholder="Your email" name="email" required size="40" value="<% if(typeof email !== 'undefined'){ %> <%= email %> <% } %>"> <br> <br>
+      <textarea id="message" placeholder="Your message" name="message" cols="40" rows="10"><% if(typeof message !== 'undefined'){ %> <%= message %> <% } %></textarea><br>
+      <input type="submit" value="Send Message">
+    </form>
+  </div>
   </body>
 </html>
